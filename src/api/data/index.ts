@@ -1,0 +1,1 @@
+export { default as apiCurso } from './Curso';
