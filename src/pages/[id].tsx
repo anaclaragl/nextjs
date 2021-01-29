@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { Header, Loading } from "../components";
 import { apiAluno } from "../api/data";
 import { IAluno } from "../interfaces/Aluno.interface";
-import {Table} from "../styles";
+import { Table } from "../styles";
+import { toast } from "react-toastify";
 
 export default function Id() {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,11 +13,21 @@ export default function Id() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await apiAluno.show(router.query.id as string);
-      setAlunos(response.data);
-      setIsLoading(false);
+      try {
+        const response = await apiAluno.show(router.query.id as string);
+        if (response.data.length === 0) {
+          toast.error("Não existe aluno neste curso!");
+        }
+        setAlunos(response.data);
+      } catch (error) {
+        toast.error("Ocorreu um erro na chamada do servidor!");
+      } finally {
+        setIsLoading(false);
+      }
     };
-    fetchData();
+    if (router.query.id) {
+      fetchData();
+    }
   }, [router.query.id]);
   return (
     <>
@@ -34,14 +45,13 @@ export default function Id() {
                 </tr>
               </thead>
               <tbody>
-                {
-                  alunos && alunos.map((item)=>(
+                {alunos &&
+                  alunos.map((item) => (
                     <tr key={item.id}>
                       <td>{item.nome}</td>
                       <td>{item.descricao}</td>
                     </tr>
-                  ))
-                }
+                  ))}
               </tbody>
             </Table>
           </div>
