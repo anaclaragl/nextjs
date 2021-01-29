@@ -12,6 +12,8 @@ export default createGlobalStyle`
     --main-hover: #5a6268;
 
     --white: #ffffff;
+    --black: #000000;
+    --grey: #f0f0f0;
     
   }
   .container {
