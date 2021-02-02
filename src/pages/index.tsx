@@ -7,6 +7,6 @@ export default function Home() {
     setTimeout(() => {
       setIsLoading(false);
     }, 500);
-  });
+  }, []);
   return <>{isLoading ? <Loading /> : <Header />}</>;
 }
