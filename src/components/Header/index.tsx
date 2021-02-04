@@ -4,7 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { apiCurso } from "../../api/data";
 import { ICurso } from "../../interfaces/Curso.interface";
 import { Link } from "../../styles";
-import {Container} from "./styles";
+import { Container } from "./styles";
 
 const Header = () => {
   const router = useRouter();
@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <Container>
-      <div  className="container">
+      <div className="container">
         <FaHome onClick={() => router.push("/")} />
         {cursos &&
           cursos.map((item) => (
