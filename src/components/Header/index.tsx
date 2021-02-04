@@ -24,7 +24,7 @@ const Header = () => {
         <FaHome onClick={() => router.push("/")} />
         {cursos &&
           cursos.map((item) => (
-            <Link key={item.id} href={item.id}>
+            <Link key={item.id} href={String(item.id)}>
               {item.nome}
             </Link>
           ))}
