@@ -32,8 +32,7 @@ const Header = () => {
         <div>
           <BsPersonSquare
             onClick={() =>
-              (window.location.href =
-                "https://react-video-2yijgtm27-lazarodu.vercel.app")
+              (window.location.href = "https://react-video-lazarodu.vercel.app")
             }
           />
         </div>

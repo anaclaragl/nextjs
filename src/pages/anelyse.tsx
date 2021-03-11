@@ -18,12 +18,7 @@ export default function Anelyse() {
           <Header />
           <div className="container">
             <h1>Oi Anelyse</h1>
-            <Image
-              src="/img/paginaInicial.png"
-              alt="Imagem pagina inicial"
-              width={606}
-              height={1280}
-            />
+            <img src="/img/paginaInicial.png" alt="Imagem pagina inicial" />
           </div>
         </>
       )}
