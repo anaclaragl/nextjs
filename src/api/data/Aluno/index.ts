@@ -3,7 +3,7 @@ import { IAluno } from "../../../interfaces/Aluno.interface"
 
 class AlunoData {
   show(cursoId: string) {
-    return api.get<IAluno[]>(`alunos/${cursoId}`);
+    return api.get<IAluno[]>(`alunos/${cursoId}/cursos`);
   }
 }
 
