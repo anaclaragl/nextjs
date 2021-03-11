@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { FaHome } from "react-icons/fa";
+import { BsPersonSquare } from "react-icons/bs";
 import { apiCurso } from "../../api/data";
 import { ICurso } from "../../interfaces/Curso.interface";
 import { Link } from "../../styles";
@@ -28,6 +29,14 @@ const Header = () => {
               {item.nome}
             </Link>
           ))}
+        <div>
+          <BsPersonSquare
+            onClick={() =>
+              (window.location.href =
+                "https://react-video-2yijgtm27-lazarodu.vercel.app")
+            }
+          />
+        </div>
       </div>
     </Container>
   );

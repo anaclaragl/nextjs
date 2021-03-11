@@ -12,5 +12,17 @@ export const Container = styled.div`
       margin: 0 10px;
       color: var(--black);
     }
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      svg {
+        font-size: 45px;
+        cursor: pointer;
+        margin: 0 10px;
+        color: var(--black);
+      }
+    }
+
   }
 `;
