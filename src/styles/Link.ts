@@ -10,7 +10,7 @@ const sizeVariations = {
 }
 const colorVariations = {
   default: css`
-    background: var(--main);
+    background: var(--green);
     color: var(--white);
     &.hover {
       background: var(--main-hover);
